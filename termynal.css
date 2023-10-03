@@ -26,7 +26,7 @@
             box-sizing: border-box;
 }
 
-[data-termynal][data-ty-macos]:before {
+[data-termynal][data-ty-unix]:before {
     content: '';
     position: absolute;
     top: 15px;
