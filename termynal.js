@@ -3,8 +3,8 @@
  * A lightweight, modern and extensible animated terminal window, using
  * async/await.
  *
- * @author Ines Montani <ines@ines.io>
- * @version 0.0.1
+ * @author Ines Montani <ines@ines.io>, Tiago
+ * @version 0.0.2
  * @license MIT
  */
 
@@ -34,8 +34,9 @@ class Termynal {
             || parseFloat(this.container.getAttribute(`${this.pfx}-startDelay`)) || 600;
         this.originalTypeDelay = this.typeDelay = options.typeDelay
             || parseFloat(this.container.getAttribute(`${this.pfx}-typeDelay`)) || 90;
-        this.originalLineDelay = this.lineDelay = options.lineDelay
-            || parseFloat(this.container.getAttribute(`${this.pfx}-lineDelay`)) || 1500;
+        let lineDelayAttr = this.container.getAttribute(`${this.pfx}-linedelay`);
+        this.originalLineDelay = this.lineDelay = lineDelayAttr ? parseFloat(lineDelayAttr) : 500;
+        console.log(parseFloat(this.container.getAttribute(`${this.pfx}-linedelay`)))
         this.progressLength = options.progressLength
             || parseFloat(this.container.getAttribute(`${this.pfx}-progressLength`)) || 40;
         this.progressChar = options.progressChar
